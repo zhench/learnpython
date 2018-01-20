@@ -1,12 +1,12 @@
 # -*- coding:utf-8 -*-
 
 f = open('./readme.md', 'r')
-print f
+print(f)
 with open('./GPL.txt', 'r') as t:
-    print t.read()
+    print(t.read())
 
 for line in f.readlines():
-    print line.strip()
+    print(line.strip())
 
 filereadme=open('tt','w')
 filereadme.write('Hello,world!')
