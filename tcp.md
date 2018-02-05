@@ -62,3 +62,11 @@ sock,addr=s.accept()#addr是一个带有ip和端口的list
 t=threading.Thread(target=tcplink,args=(sock,addr))
 t.start()
 ```
+
+
+# UDP
+
+- sock.SOCK_DGRAM
+- data,addr=s.recvfrom(1024)
+- sendto(data，addr)
+
