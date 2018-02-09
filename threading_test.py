@@ -4,6 +4,7 @@
 import time,threading
 
 balance=0
+lock = threading.Lock()
 
 def change_it(n):
 	global balance
@@ -12,7 +13,11 @@ def change_it(n):
 
 def run_thread(n):
 	for i in range(100000):
-		change_it(n)
+		lock.acquire()
+		try:
+			change_it(n)
+		finally:
+			lock.release()
 
 t1=threading.Thread(target=run_thread,args=(5,))
 t2=threading.Thread(target=run_thread,args=(8,))
