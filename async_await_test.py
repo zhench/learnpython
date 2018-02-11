@@ -8,4 +8,4 @@ async def hello():
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(hello())
-loop("Hello again!")
+loop.close()
