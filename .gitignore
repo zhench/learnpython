@@ -81,6 +81,10 @@ celerybeat-schedule
 # virtualenv
 venv/
 ENV/
+myscrapy/Include/
+myscrapy/Lib/
+myscrapy/Scripts/
+myscrapy/tcl/
 
 # Spyder project settings
 .spyderproject
