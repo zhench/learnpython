@@ -48,3 +48,37 @@
 
 ### 谓语
 
+用来查找某个特定的节点或者包含某个指定的节点。
+谓语被嵌在方括号中。
+
+|路径表达式|结果|
+|-|-|
+|/bookstore/book[1]|选取属于bookstore子元素的第一个book元素|
+|/bookstore/book[last()]|选取属于bookstore子元素的最后一个book元素|
+|/bookstore/book[last()-1]|选取属于bookstore子元素的倒数第二个book元素|
+|/bookstore/book[position()<3|选取最前面的两个属于bookstore元素的子元素的book元素|
+|//title[@lang]|选取所有拥有名为lang的属性的title元素|
+|//title[@lang='eng'|选取所有title元素，且这些元素拥有值为eng的lang属性|
+|/bookstore/book[price>35.00]|选取bookstore元素的所有book元素，且其中的price元素的值须大于35.00|
+|/bookstore/book[price>35.00]/title|选取bookstore元素中的book元素的所有title元素，且其中的price元素的值须大于35.00
+
+### 选取未知节点
+
+XPath通配符可用来选取未知的xml元素
+
+|通配符|描述|
+|-|-|
+|*|匹配任何元素节点|
+|@*|匹配任何属性节点|
+|node()|匹配任何类型的节点|
+
+### 选取若路径
+
+通过在路径表达式中使用“|”运算符，可以选取若干路径。
+
+|路径表达式|结果|
+|-|-|
+|//book/title丨//book/price|选取book元素的所有title和price元素|
+|//title丨//price|选取文档中的所有title和price元素|
+|/bookstore/book/title丨//price | 选取属于bookstore元素的book元素的所有title元素，以及文档中所有的price元素|
+
