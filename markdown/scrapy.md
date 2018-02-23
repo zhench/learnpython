@@ -14,6 +14,7 @@ Usage:
   scrapy <command> [options] [args]
 
 Available commands:
+
  - bench：Run quick benchmark test
  - check：Check spider contracts
  - crawl：Run a spider
