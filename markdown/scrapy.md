@@ -109,3 +109,18 @@ Request(url[, callback,method='GET',header,body,cookies,meta,encoding='utf-8',pr
 - xpath(query)
 - css(query)
 - urljoin(url)
+
+### Spider class
+
+- def start_requsts(self)
+- def make_request_from_url(self,url)
+- def parse(self,response)
+
+### Selector对象
+
+其他方法BeautifulSoup、lxml
+
+- xpath
+- css
+
+这两个方法返回一个SelectorList对象，该对象也有xpath，css方法

@@ -20,8 +20,8 @@ class BooksspiderSpider(scrapy.Spider):
                 'name':name,
                 'price':price,
             }
-
             next_url=response.css('ul.pager li.next a::attr(href)').extract_first()
+            print(response.css('ul.pager li.next a::attr(href)'))
             if next_url:
                 next_url=response.urljoin(next_url)
                 yield scrapy.Request(next_url,callback=self.parse)
