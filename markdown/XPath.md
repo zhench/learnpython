@@ -1,16 +1,16 @@
-# XPath
+# <center>XPath</center>
 
 ## 术语
 
 ### 节点
 
- - 元素
- - 属性
- - 文本
- - 命名空间
- - 处理指令
- - 注释
- - 文档（根）节点 
+- 元素
+- 属性
+- 文本
+- 命名空间
+- 处理指令
+- 注释
+- 文档（根）节点 
 
 ### 基本值
 
@@ -44,7 +44,6 @@
 |//book|选取所有 book 子元素，而不管它们在文档中的位置。|
 |bookstore//book|选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。|
 |//@lang|选取名为 lang 的所有属性。|
-
 
 ### 谓语
 
@@ -82,3 +81,34 @@ XPath通配符可用来选取未知的xml元素
 |//title丨//price|选取文档中的所有title和price元素|
 |/bookstore/book/title丨//price | 选取属于bookstore元素的book元素的所有title元素，以及文档中所有的price元素|
 
+## XPath Axes(轴)
+
+|轴名称|结果|
+|-|-|
+|ancestor|选取当前节点的所有先辈（父、祖父等）|
+|ancestor-or-self|选取当前节点的所有先辈（父、祖父等）以及当前节点本身|
+|attribute|选取当前节点的所有属性|
+|child|选取当前节点的所有子元素|
+|descendant|选取当前节点的所有后代元素（子、孙等）
+|descendant|选取当前节点的所有后代元素（子、孙等）以及当前节点本身|
+|following|选取文档中当前节点的结束标签之后的所有节点|
+|namespace|选取当前节点的所有命名空间节点|
+|parent|选取当前节点的父节点|
+|preceding|选取文档中当前节点的开始标签之前的所有节点|
+|preceding-sibling|选取当前节点之前的所有同级节点|
+|self|选取当前节点|
+
+### 位置路径表达式
+
+ - 绝对位置路径：/step/step/...
+ - 相对位置路径：step/step/...
+
+### 步（step）包括
+
+- 轴（axis）
+- 节点测试（node-test)
+- 零个或者更多谓语（predicate）
+
+#### 步的语法
+
+轴名称::节点测试[谓语]
