@@ -124,3 +124,19 @@ Request(url[, callback,method='GET',header,body,cookies,meta,encoding='utf-8',pr
 - css
 
 这两个方法返回一个SelectorList对象，该对象也有xpath，css方法
+
+#### 创建对象
+
+```python
+from scrapy.selector import Selector
+from scrapy.http import HtmlResponse
+
+selector = Selector(text=text)
+print(selector)
+
+body=text
+response=HtmlResponse(url='http://www.example.com',body=body,encoding='utf8')
+selector=Selector(response=response)
+
+
+```
