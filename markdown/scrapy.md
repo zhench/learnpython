@@ -137,6 +137,25 @@ print(selector)
 body=text
 response=HtmlResponse(url='http://www.example.com',body=body,encoding='utf8')
 selector=Selector(response=response)
-
-
 ```
+
+#### CSS选择器
+
+|表达式|描述|例子|
+|-|-|-|
+|*|选中所有元素|*|
+|E|选中E元素|p|
+|E1,E2|选中E1和E2元素|div,pre|
+|E1 E2|选中E1后代元素中的E2元素|div p|
+|E1>E2|选中E1后代元素中的E2元素|div>p|
+|E1+E2|选中E1兄弟元素中的E2元素|p+strong|
+|.CLASS|选中CLASS属性包含CLASS的元素|.info E.CLASS|
+|#ID|选中id属性为ID的元素|#main|
+|[ATTR]|选中包含ATTR属性的元素|[href]|
+|[ATTR=VALUE]|选中包含ATTR属性且值为VALUE的元素|[method=post]|
+|[ATTR=~VALUE]|选中包含ATTR属性且值包含VALUE的元素|[class=~clearfix]|
+|E:nth-child(n) E:nth-last-child(n)|选中E元素，且钙元素必须是其父元素的（倒数）第n个子元素|a:nth-child(1) a:nth-last-child(2)|
+|E:first-child E:last-child|选中E元素，且该元素必须是其父元素的（倒数）第一个元素|a:first-child a:last-child|
+|E:empty|选中没有子元素的E元素|div:empty|
+|E::text|选中E元素的文本节点（Text Node）|p::text|
+|

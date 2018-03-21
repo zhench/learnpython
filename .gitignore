@@ -92,3 +92,6 @@ myscrapy/tcl/
 # Rope project settings
 .ropeproject
 .vscode/settings.json
+
+#tags
+tags
