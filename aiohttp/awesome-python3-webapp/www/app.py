@@ -11,7 +11,7 @@ from aiohttp import web
 
 
 def index(request):
-    return web.Response(body=u'<h1>你好</h1>'.encode('gbk'),headers={'content-type':'text/html'})
+    return web.Response(body=u'<h1>你好</h1>'.encode('utf-8'),headers={'content-type':'text/html'})
 
 
 @asyncio.coroutine
